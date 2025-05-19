@@ -14,7 +14,6 @@ const QueryProvider = ({children}: PropsWithChildren) => {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
