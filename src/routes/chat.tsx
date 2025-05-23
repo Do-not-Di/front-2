@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useMessage } from '@/hooks/use-message';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const schema = z.object({
   message: z.string().min(1),
@@ -17,12 +17,6 @@ const ChatPage = () => {
     userId: 'user',
     onMessage: (userName, message) => {
       setMessages(prev => [...prev, { userName, message }]);
-      setTimeout(() => {
-        messageRef.current?.scrollTo({
-          top: messageRef.current?.scrollHeight,
-          behavior: 'smooth',
-        });
-      });
     },
   });
 
@@ -37,13 +31,16 @@ const ChatPage = () => {
     sendMessage(data.message);
     setMessages(prev => [...prev, { userName: 'me', message: data.message }]);
     form.reset();
+  };
+
+  useEffect(() => {
     setTimeout(() => {
       messageRef.current?.scrollTo({
         top: messageRef.current?.scrollHeight,
         behavior: 'smooth',
       });
-    });
-  };
+    }, 100);
+  }, [messages]);
 
   return (
     <div className="flex flex-col h-dvh">
