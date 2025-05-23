@@ -37,6 +37,12 @@ const ChatPage = () => {
     sendMessage(data.message);
     setMessages(prev => [...prev, { userName: 'me', message: data.message }]);
     form.reset();
+    setTimeout(() => {
+      messageRef.current?.scrollTo({
+        top: messageRef.current?.scrollHeight,
+        behavior: 'smooth',
+      });
+    });
   };
 
   return (
