@@ -1,7 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import "./pretendard.css";
+
+
 @custom-variant dark (&:is(.dark *));
+
+@theme {
+	--font-pretendard: "Pretendard", sans-serif;
+}
 
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
@@ -115,6 +122,15 @@
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground font-pretendard;
 	}
 }
+
+@layer components {
+	.swiper-pagination-bullet-active {
+		@apply !bg-white;
+	}
+}
+
+
+

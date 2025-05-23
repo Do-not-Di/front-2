@@ -9,8 +9,6 @@
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": true,
 
 		/* Linting */
 		"strict": true,
@@ -19,5 +17,5 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true
 	},
-	"include": ["vite.config.ts"]
+	"include": ["vite.config.ts", "src/font-preload.ts"]
 }

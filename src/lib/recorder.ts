@@ -111,7 +111,7 @@ export class Recorder {
     return this.recognitionHistory;
   }
 
-  private disableClick = (event: MouseEvent) => {
+  private disableClick = () => {
     this.SpeechRecognition.stop();
     this.stop();
   };

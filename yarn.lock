@@ -1109,6 +1109,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^22.15.21":
+  version: 22.15.21
+  resolution: "@types/node@npm:22.15.21"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/f092bbccda2131c2b2c8f720338080aa0ef1d928f5f1062c03954a4f7dafa7ee3ed29bc3e51bd4e2584473b3d943c637a2b39ad7174898970818270187cf10c1
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^19.1.2":
   version: 19.1.5
   resolution: "@types/react-dom@npm:19.1.5"
@@ -1375,6 +1384,7 @@ __metadata:
     "@tanstack/react-query": "npm:^5.76.1"
     "@tanstack/react-query-devtools": "npm:^5.76.1"
     "@types/dom-speech-recognition": "npm:^0.0.6"
+    "@types/node": "npm:^22.15.21"
     "@types/react": "npm:^19.1.2"
     "@types/react-dom": "npm:^19.1.2"
     "@types/react-router-dom": "npm:^5.3.3"
@@ -1390,6 +1400,7 @@ __metadata:
     react-router: "npm:^7.6.0"
     react-router-dom: "npm:^7.6.0"
     react-virtuoso: "npm:^4.12.7"
+    swiper: "npm:^11.2.8"
     tailwind-merge: "npm:^3.3.0"
     tailwindcss: "npm:^4.1.7"
     tw-animate-css: "npm:^1.3.0"
@@ -2547,6 +2558,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swiper@npm:^11.2.8":
+  version: 11.2.8
+  resolution: "swiper@npm:11.2.8"
+  checksum: 10c0/1f20611434ae9659a62da3efc220043c52135e9377c95c359f2baa4852deaeb52c9580e14e4d1b6c3f1a27ff118bbd3b9e13f14c8ca99e0ee7f63b17ec94f6dc
+  languageName: node
+  linkType: hard
+
 "tailwind-merge@npm:^3.3.0":
   version: 3.3.0
   resolution: "tailwind-merge@npm:3.3.0"
@@ -2637,6 +2655,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/39117e346ff8ebd87ae1510b3a77d5d92dae5a89bde588c747d25da5c146603a99c8ee588c7ef80faaf123d89ed46f6dbd918d534d641083177d5fac38b8a1cb
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10c0/c01ed51829b10aa72fc3ce64b747f8e74ae9b60eafa19a7b46ef624403508a54c526ffab06a14a26b3120d055e1104d7abe7c9017e83ced038ea5cf52f8d5e04
   languageName: node
   linkType: hard
 

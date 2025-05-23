@@ -8,6 +8,7 @@ interface UseMessageOption {
 const useMessage = ({ userId, onMessage }: UseMessageOption) => {
   const socket = useRef<WebSocket | null>(null);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (!userId) return;
     socket.current = new WebSocket(`ws://192.168.0.199:8080/ws/chat?userId=${userId}`);
@@ -21,8 +22,12 @@ const useMessage = ({ userId, onMessage }: UseMessageOption) => {
     });
 
     socket.current.addEventListener('message', receiveMessage => {
-      const [userName, message] = receiveMessage.data.split('|');
-      onMessage(userName, message);
+      const messageObj = JSON.parse(receiveMessage.data) as {
+        message: { 'en-US': string; ko: string };
+        receiverId: string;
+        senderId: string;
+      };
+      onMessage(messageObj.senderId, messageObj.message['en-US']);
     });
 
     socket.current.addEventListener('error', error => {
@@ -30,9 +35,10 @@ const useMessage = ({ userId, onMessage }: UseMessageOption) => {
     });
 
     return () => {
+      console.log('close');
       socket.current?.close();
     };
-  }, [userId, onMessage]);
+  }, [userId]);
 
   const sendMessage = (message: string) => {
     socket.current?.send(

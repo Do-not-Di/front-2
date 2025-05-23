@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import Header from './header';
-import BottomNav from './bottom-nav';
+import { motion } from 'motion/react';
+import { fadeInOutVariants } from '@/constants';
 
 interface MobileLayoutProps {
   children: ReactNode;
@@ -8,19 +8,19 @@ interface MobileLayoutProps {
   showBack?: boolean;
 }
 
-const MobileLayout = ({
-  children,
-  headerTitle,
-  showBack,
-}: MobileLayoutProps) => {
+const MobileLayout = ({ children }: MobileLayoutProps) => {
   return (
-    <div className='min-h-screen bg-gray-100'>
-      <div className='max-w-md mx-auto min-h-screen bg-white shadow-lg flex flex-col'>
-        <Header title={headerTitle} showBack={showBack} />
-        <div className='flex-1 overflow-y-auto'>{children}</div>
-        <BottomNav />
+    <motion.div
+      variants={fadeInOutVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="min-h-screen bg-gray-100">
+      <div className="max-w-md mx-auto min-h-screen bg-white shadow-lg flex flex-col">
+        <div className="flex-1 overflow-y-auto">{children}</div>
+        {/* <BottomNav /> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
